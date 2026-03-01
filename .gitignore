@@ -1,0 +1,85 @@
+############################
+# GLOBAL
+############################
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+*.env
+
+############################
+# BACKEND (Spring Boot / Maven)
+############################
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Compiled classes
+*.class
+
+############################
+# FRONTEND (React)
+############################
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+build/
+dist/
+
+# Coverage
+coverage/
+
+############################
+# DOCKER
+############################
+
+# Docker overrides
+docker-compose.override.yml
+
+############################
+# DATABASE
+############################
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+############################
+# TEMP FILES
+############################
+
+*.swp
+*.swo
+*~
