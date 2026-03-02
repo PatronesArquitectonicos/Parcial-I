@@ -12,7 +12,7 @@ const apiClient = axios.create({
 
 const pedidoService = {
   getAll: async () => {
-    const { data } = await apiClient.get('/');
+    const { data } = await apiClient.get('');
     return data;
   },
 
@@ -22,7 +22,7 @@ const pedidoService = {
   },
 
   create: async (pedido) => {
-    const { data } = await apiClient.post('/', pedido);
+    const { data } = await apiClient.post('', pedido);
     return data;
   },
 
