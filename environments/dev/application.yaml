@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/RedSkyTechnologies/Dropisky.git
+    repoURL: https://github.com/PatronesArquitectonicos/Parcial-I.git
     targetRevision: main
     path: charts/pedido-app
     helm:
