@@ -1,0 +1,12 @@
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.loading {
+  text-align: center;
+  color: #95a5a6;
+  padding: 50px 0;
+  font-size: 1rem;
+}

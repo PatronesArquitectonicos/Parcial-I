@@ -8,12 +8,13 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 # Copiar dependencias primero (cache de Docker)
-COPY package.json ./
-RUN npm install --production=false
+COPY package.json package-lock.json* ./
+RUN npm install
 
 # Copiar código fuente y construir
-COPY public ./public
-COPY src ./src
+COPY public/ ./public/
+COPY src/ ./src/
+
 RUN npm run build
 
 # --- Stage 2: Runtime con Nginx ---

@@ -1,0 +1,198 @@
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #34495e;
+  flex: 1;
+}
+
+.titulo span {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.buscador {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 230px;
+  font-size: 0.85rem;
+  transition: border-color 0.2s;
+}
+
+.buscador:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.12);
+}
+
+.filtros {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filtroBtn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.filtroBtn:not(.activo) {
+  background: #e0e0e0;
+  color: #555;
+}
+
+.filtroBtn:not(.activo):hover {
+  background: #ccc;
+}
+
+.activo {
+  color: #fff;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: #95a5a6;
+  padding: 36px 0;
+  font-size: 0.95rem;
+}
+
+/* Table */
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.table {
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.table thead tr {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.table th {
+  padding: 13px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.thCenter {
+  text-align: center;
+}
+
+.thRight {
+  text-align: right;
+}
+
+.table tbody tr {
+  transition: background 0.12s;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f7f9fb;
+}
+
+.table tbody tr:hover {
+  background: #edf2f7;
+}
+
+.table td {
+  padding: 11px 12px;
+  vertical-align: middle;
+}
+
+.tdId {
+  font-weight: 700;
+  color: #95a5a6;
+}
+
+.tdCenter {
+  text-align: center;
+}
+
+.tdRight {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tdFecha {
+  font-size: 0.78rem;
+  color: #95a5a6;
+}
+
+.tdAcciones {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Estado select */
+.estadoSelect {
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+}
+
+/* Action buttons */
+.actionBtn {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: opacity 0.15s;
+}
+
+.actionBtn:hover {
+  opacity: 0.85;
+}
+
+.editBtn {
+  background: #e67e22;
+}
+
+.deleteBtn {
+  background: #e74c3c;
+}
+
+.confirmBtn {
+  background: #c0392b;
+}
+
+.cancelDeleteBtn {
+  background: #95a5a6;
+}
