@@ -1,0 +1,29 @@
+fullnameOverride: ""
+
+image:
+  repository: ""
+  tag: ""
+  pullPolicy: IfNotPresent
+
+replicas: 1
+
+service:
+  port: 8080
+
+resources: {}
+
+db:
+  host: ""
+  port: 5432
+  name: ""
+
+existingSecret: ""
+secretKeys:
+  usernameKey: username
+  passwordKey: password
+
+hpa:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 60

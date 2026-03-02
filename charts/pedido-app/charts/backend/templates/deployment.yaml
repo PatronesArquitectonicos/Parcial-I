@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "backend.fullname" . }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ include "backend.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "backend.fullname" . }}
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "backend.fullname" . }}
+                  key: DB_URL
+
+            # NO credenciales en Git: se exige Secret ya creado
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ required "backend.existingSecret es obligatorio (no pongas credenciales en Git)" .Values.existingSecret }}
+                  key: {{ .Values.secretKeys.usernameKey }}
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ required "backend.existingSecret es obligatorio (no pongas credenciales en Git)" .Values.existingSecret }}
+                  key: {{ .Values.secretKeys.passwordKey }}
+
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 15
+
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

@@ -1,0 +1,19 @@
+apiVersion: v2
+name: pedido-app
+description: Umbrella chart (postgresql + backend + frontend)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: "^15.0.0"
+
+  - name: backend
+    repository: "file://charts/backend"
+    version: 0.1.0
+
+  - name: frontend
+    repository: "file://charts/frontend"
+    version: 0.1.0

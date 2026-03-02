@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS pedidos (
+    id SERIAL PRIMARY KEY,
+    cliente VARCHAR(255) NOT NULL,
+    producto VARCHAR(255) NOT NULL,
+    cantidad INTEGER NOT NULL,
+    precio_total DOUBLE PRECISION NOT NULL,
+    estado VARCHAR(50) NOT NULL DEFAULT 'PENDIENTE',
+    fecha_creacion TIMESTAMP NOT NULL DEFAULT NOW()
+);

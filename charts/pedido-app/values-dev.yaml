@@ -1,0 +1,9 @@
+backend:
+  replicas: 1
+  image:
+    tag: "1.0.0"
+
+frontend:
+  replicas: 1
+  image:
+    tag: "1.0.0"

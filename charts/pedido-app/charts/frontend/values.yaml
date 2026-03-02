@@ -1,0 +1,13 @@
+fullnameOverride: ""
+
+image:
+  repository: ""
+  tag: ""
+  pullPolicy: IfNotPresent
+
+replicas: 1
+
+service:
+  port: 80
+
+resources: {}
