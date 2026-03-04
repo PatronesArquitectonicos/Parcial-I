@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: {{ include "backend.fullname" . }}
 spec:
+{{- if not .Values.hpa.enabled }}
   replicas: {{ .Values.replicas }}
+{{- end }}
   selector:
     matchLabels:
       app: {{ include "backend.fullname" . }}
