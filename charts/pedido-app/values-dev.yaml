@@ -11,7 +11,7 @@ postgresql:
 backend:
   replicas: 1
   image:
-    tag: "1.2.0"
+    tag: "1.3.0"
 
 frontend:
   replicas: 1
